@@ -1,0 +1,140 @@
+{
+    "experiment": "Validation-based neutral sentiment tuning",
+    "random_state": 42,
+    "split": {
+        "training_reviews": 29928,
+        "validation_reviews": 9977,
+        "test_reviews": 9977
+    },
+    "selection_metric": "validation_macro_f1",
+    "best_validation_configuration": {
+        "name": "balanced_C1",
+        "C": 1.0,
+        "class_weight": "balanced"
+    },
+    "validation_results": [
+        {
+            "name": "balanced_C1",
+            "C": 1.0,
+            "class_weight": "balanced",
+            "validation_accuracy": 0.8037486218302095,
+            "validation_macro_f1": 0.644964363126504,
+            "validation_weighted_f1": 0.8230054467464568,
+            "validation_neutral_f1": 0.295668549905838
+        },
+        {
+            "name": "balanced_C2",
+            "C": 2.0,
+            "class_weight": "balanced",
+            "validation_accuracy": 0.8076576125087702,
+            "validation_macro_f1": 0.6373894317412585,
+            "validation_weighted_f1": 0.8230587940718367,
+            "validation_neutral_f1": 0.27921092564491656
+        },
+        {
+            "name": "neutral_1_5_C1",
+            "C": 1.0,
+            "class_weight": {
+                "negative": 1.0,
+                "neutral": 1.5,
+                "positive": 1.0
+            },
+            "validation_accuracy": 0.8526611205773279,
+            "validation_macro_f1": 0.6035817844411119,
+            "validation_weighted_f1": 0.8308926684150717,
+            "validation_neutral_f1": 0.15247524752475247
+        },
+        {
+            "name": "neutral_2_C1",
+            "C": 1.0,
+            "class_weight": {
+                "negative": 1.0,
+                "neutral": 2.0,
+                "positive": 1.0
+            },
+            "validation_accuracy": 0.8482509772476696,
+            "validation_macro_f1": 0.6200000037822805,
+            "validation_weighted_f1": 0.8334691235929537,
+            "validation_neutral_f1": 0.20695504664970313
+        },
+        {
+            "name": "neutral_3_C1",
+            "C": 1.0,
+            "class_weight": {
+                "negative": 1.0,
+                "neutral": 3.0,
+                "positive": 1.0
+            },
+            "validation_accuracy": 0.8392302295279142,
+            "validation_macro_f1": 0.6329665737653577,
+            "validation_weighted_f1": 0.8339178524592934,
+            "validation_neutral_f1": 0.2595108695652174
+        }
+    ],
+    "final_test_results": {
+        "accuracy": 0.8072566903878922,
+        "macro_f1": 0.6462417713573149,
+        "weighted_f1": 0.825365025870619,
+        "neutral_f1": 0.29423076923076924,
+        "classification_report": {
+            "negative": {
+                "precision": 0.7063369397217929,
+                "recall": 0.7911136757068667,
+                "f1-score": 0.7463255307566685,
+                "support": 1733.0
+            },
+            "neutral": {
+                "precision": 0.23305407463823305,
+                "recall": 0.39895697522816165,
+                "f1-score": 0.29423076923076924,
+                "support": 767.0
+            },
+            "positive": {
+                "precision": 0.9485348802617879,
+                "recall": 0.8528821719941153,
+                "f1-score": 0.898169014084507,
+                "support": 7477.0
+            },
+            "accuracy": 0.8072566903878922,
+            "macro avg": {
+                "precision": 0.6293086315406046,
+                "recall": 0.6809842743097146,
+                "f1-score": 0.6462417713573149,
+                "support": 9977.0
+            },
+            "weighted avg": {
+                "precision": 0.8514613302097603,
+                "recall": 0.8072566903878922,
+                "f1-score": 0.825365025870619,
+                "support": 9977.0
+            }
+        },
+        "confusion_matrix": [
+            [
+                1371,
+                249,
+                113
+            ],
+            [
+                228,
+                306,
+                233
+            ],
+            [
+                342,
+                758,
+                6377
+            ]
+        ],
+        "class_order": [
+            "negative",
+            "neutral",
+            "positive"
+        ]
+    },
+    "notes": [
+        "The final test set was not used to choose the configuration.",
+        "The original deployed model was not changed.",
+        "Compare with the original baseline cautiously because the data split and TF-IDF settings differ."
+    ]
+}

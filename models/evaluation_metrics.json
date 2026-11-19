@@ -1,0 +1,55 @@
+{
+    "model": "TF-IDF + Logistic Regression",
+    "label_source": "Star ratings: 1-2 negative, 3 neutral, 4-5 positive",
+    "random_state": 42,
+    "test_size": 0.2,
+    "total_usable_reviews": 49882,
+    "training_reviews": 39905,
+    "testing_reviews": 9977,
+    "accuracy": 0.8184825097724767,
+    "sentiment_distribution": {
+        "positive": 37381,
+        "negative": 8667,
+        "neutral": 3834
+    },
+    "classification_report": {
+        "negative": {
+            "precision": 0.7112353838332486,
+            "recall": 0.8072706289671091,
+            "f1-score": 0.7562162162162163,
+            "support": 1733.0
+        },
+        "neutral": {
+            "precision": 0.2493681550126369,
+            "recall": 0.3859191655801825,
+            "f1-score": 0.3029682702149437,
+            "support": 767.0
+        },
+        "positive": {
+            "precision": 0.9484097904147736,
+            "recall": 0.8654540591146181,
+            "f1-score": 0.905034965034965,
+            "support": 7477.0
+        },
+        "accuracy": 0.8184825097724767,
+        "macro avg": {
+            "precision": 0.6363377764202197,
+            "recall": 0.6862146178873032,
+            "f1-score": 0.654739817155375,
+            "support": 9977.0
+        },
+        "weighted avg": {
+            "precision": 0.8534726168195824,
+            "recall": 0.8184825097724767,
+            "f1-score": 0.8329002505286157,
+            "support": 9977.0
+        }
+    },
+    "class_order": [
+        "negative",
+        "neutral",
+        "positive"
+    ],
+    "review_column": "Review_text",
+    "rating_column": "Rating"
+}
